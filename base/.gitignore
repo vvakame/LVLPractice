@@ -1,0 +1,8 @@
+.*.swp
+.DS_Store
+bin/
+gen/
+res/
+test/bin/
+download/
+
