@@ -143,8 +143,7 @@ public class LicenseChecker implements ServiceConnection {
 			callback.allow();
 		} else {
 			LicenseValidator validator = new LicenseValidator(mPolicy,
-					new NullDeviceLimiter(), callback, generateNonce(),
-					mPackageName, mVersionCode);
+					callback, generateNonce(), mPackageName, mVersionCode);
 
 			if (mService == null) {
 				Log.i(TAG, "Binding to licensing service.");

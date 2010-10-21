@@ -54,13 +54,11 @@ class LicenseValidator {
 	private final int mNonce;
 	private final String mPackageName;
 	private final String mVersionCode;
-	private final DeviceLimiter mDeviceLimiter;
 
-	LicenseValidator(ServerManagedPolicy policy, DeviceLimiter deviceLimiter,
+	LicenseValidator(ServerManagedPolicy policy,
 			LicenseCheckerCallback callback, int nonce, String packageName,
 			String versionCode) {
 		mPolicy = policy;
-		mDeviceLimiter = deviceLimiter;
 		mCallback = callback;
 		mNonce = nonce;
 		mPackageName = packageName;
@@ -170,9 +168,7 @@ class LicenseValidator {
 		switch (responseCode) {
 		case LICENSED:
 		case LICENSED_OLD_KEY:
-			LicenseResponse limiterResponse = mDeviceLimiter
-					.isDeviceAllowed(userId);
-			handleResponse(limiterResponse, data);
+			handleResponse(LicenseResponse.LICENSED, data);
 			break;
 		case NOT_LICENSED:
 			handleResponse(LicenseResponse.NOT_LICENSED, data);
