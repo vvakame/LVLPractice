@@ -16,6 +16,8 @@
 
 package com.android.vending.licensing;
 
+import com.android.vending.licensing.ServerManagedPolicy.LicenseResponse;
+
 /**
  * A DeviceLimiter that doesn't limit the number of devices that can use a given
  * user's license.
@@ -26,7 +28,7 @@ package com.android.vending.licensing;
  */
 public class NullDeviceLimiter implements DeviceLimiter {
 
-	public Policy.LicenseResponse isDeviceAllowed(String userId) {
-		return Policy.LicenseResponse.LICENSED;
+	public LicenseResponse isDeviceAllowed(String userId) {
+		return LicenseResponse.LICENSED;
 	}
 }

@@ -45,5 +45,5 @@ public interface DeviceLimiter {
 	 * @return LICENSED if the device is allowed, NOT_LICENSED if not, RETRY if
 	 *         an error occurs
 	 */
-	Policy.LicenseResponse isDeviceAllowed(String userId);
+	ServerManagedPolicy.LicenseResponse isDeviceAllowed(String userId);
 }

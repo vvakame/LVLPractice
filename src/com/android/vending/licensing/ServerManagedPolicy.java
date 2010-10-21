@@ -43,7 +43,7 @@ import android.util.Log;
  * Developers who need more fine grained control over their application's
  * licensing policy should implement a custom Policy.
  */
-public class ServerManagedPolicy implements Policy {
+public class ServerManagedPolicy {
 
 	private static final String TAG = "ServerManagedPolicy";
 	private static final String PREFS_FILE = "com.android.vending.licensing.ServerManagedPolicy";
@@ -58,6 +58,25 @@ public class ServerManagedPolicy implements Policy {
 	private static final String DEFAULT_RETRY_COUNT = "0";
 
 	private static final long MILLIS_PER_MINUTE = 60 * 1000;
+
+	/**
+	 * Result of a license check.
+	 */
+	public enum LicenseResponse {
+		/**
+		 * User is licensed to use the app.
+		 */
+		LICENSED,
+		/**
+		 * User is not licensed to use the app.
+		 */
+		NOT_LICENSED,
+		/**
+		 * Retryable error. e.g. no network or application is over request
+		 * quota.
+		 */
+		RETRY,
+	}
 
 	private long mValidityTimestamp;
 	private long mRetryUntil;

@@ -39,7 +39,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 import com.android.vending.licensing.LicenseCheckerCallback.ApplicationErrorCode;
-import com.android.vending.licensing.Policy.LicenseResponse;
+import com.android.vending.licensing.ServerManagedPolicy.LicenseResponse;
 import com.android.vending.licensing.util.Base64;
 import com.android.vending.licensing.util.Base64DecoderException;
 
@@ -68,7 +68,7 @@ public class LicenseChecker implements ServiceConnection {
 
 	private PublicKey mPublicKey;
 	private final Context mContext;
-	private final Policy mPolicy;
+	private final ServerManagedPolicy mPolicy;
 	/**
 	 * A handler for running tasks on a background thread. We don't want license
 	 * processing to block the UI thread.
@@ -89,7 +89,7 @@ public class LicenseChecker implements ServiceConnection {
 	 * @throws IllegalArgumentException
 	 *             if encodedPublicKey is invalid
 	 */
-	public LicenseChecker(Context context, Policy policy,
+	public LicenseChecker(Context context, ServerManagedPolicy policy,
 			String encodedPublicKey) {
 		mContext = context;
 		mPolicy = policy;

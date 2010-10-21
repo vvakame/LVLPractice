@@ -26,7 +26,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.vending.licensing.LicenseCheckerCallback.ApplicationErrorCode;
-import com.android.vending.licensing.Policy.LicenseResponse;
+import com.android.vending.licensing.ServerManagedPolicy.LicenseResponse;
 import com.android.vending.licensing.util.Base64;
 import com.android.vending.licensing.util.Base64DecoderException;
 
@@ -49,14 +49,14 @@ class LicenseValidator {
 	private static final int ERROR_INVALID_PACKAGE_NAME = 0x102;
 	private static final int ERROR_NON_MATCHING_UID = 0x103;
 
-	private final Policy mPolicy;
+	private final ServerManagedPolicy mPolicy;
 	private final LicenseCheckerCallback mCallback;
 	private final int mNonce;
 	private final String mPackageName;
 	private final String mVersionCode;
 	private final DeviceLimiter mDeviceLimiter;
 
-	LicenseValidator(Policy policy, DeviceLimiter deviceLimiter,
+	LicenseValidator(ServerManagedPolicy policy, DeviceLimiter deviceLimiter,
 			LicenseCheckerCallback callback, int nonce, String packageName,
 			String versionCode) {
 		mPolicy = policy;
