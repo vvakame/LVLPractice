@@ -24,7 +24,7 @@ import android.text.TextUtils;
 /**
  * ResponseData from licensing server.
  */
-class ResponseData {
+final class ResponseData {
 
 	public int responseCode;
 	public int nonce;

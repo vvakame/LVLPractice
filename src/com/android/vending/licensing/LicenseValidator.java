@@ -34,7 +34,7 @@ import com.android.vending.licensing.util.Base64DecoderException;
  * Contains data related to a licensing request and methods to verify and
  * process the response.
  */
-class LicenseValidator {
+final class LicenseValidator {
 	private static final String TAG = "LicenseValidator";
 
 	// Server response codes.

@@ -23,7 +23,7 @@ import android.util.Log;
  * An wrapper for SharedPreferences that transparently performs data
  * obfuscation.
  */
-public class PreferenceObfuscator {
+final public class PreferenceObfuscator {
 
 	private static final String TAG = "PreferenceObfuscator";
 

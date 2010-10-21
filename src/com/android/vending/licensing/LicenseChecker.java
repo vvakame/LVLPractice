@@ -54,7 +54,7 @@ import com.android.vending.licensing.util.Base64DecoderException;
  * Must also provide the Base64-encoded RSA public key associated with your
  * developer account. The public key is obtainable from the publisher site.
  */
-public class LicenseChecker implements ServiceConnection {
+final public class LicenseChecker implements ServiceConnection {
 	private static final String TAG = "LicenseChecker";
 
 	private static final String KEY_FACTORY_ALGORITHM = "RSA";

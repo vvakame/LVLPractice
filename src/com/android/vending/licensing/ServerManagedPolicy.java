@@ -43,7 +43,7 @@ import android.util.Log;
  * Developers who need more fine grained control over their application's
  * licensing policy should implement a custom Policy.
  */
-public class ServerManagedPolicy {
+final public class ServerManagedPolicy {
 
 	private static final String TAG = "ServerManagedPolicy";
 	private static final String PREFS_FILE = "com.android.vending.licensing.ServerManagedPolicy";
