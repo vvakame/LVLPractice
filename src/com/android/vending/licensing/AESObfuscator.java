@@ -35,7 +35,7 @@ import com.android.vending.licensing.util.Base64DecoderException;
 /**
  * An Obfuscator that uses AES to encrypt data.
  */
-public class AESObfuscator implements Obfuscator {
+public class AESObfuscator {
 	private static final String UTF8 = "UTF-8";
 	private static final String KEYGEN_ALGORITHM = "PBEWITHSHAAND256BITAES-CBC-BC";
 	private static final String CIPHER_ALGORITHM = "AES/CBC/PKCS5Padding";

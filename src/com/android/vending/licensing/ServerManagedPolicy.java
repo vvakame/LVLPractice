@@ -92,7 +92,7 @@ public class ServerManagedPolicy {
 	 * @param obfuscator
 	 *            An obfuscator to be used with preferences.
 	 */
-	public ServerManagedPolicy(Context context, Obfuscator obfuscator) {
+	public ServerManagedPolicy(Context context, AESObfuscator obfuscator) {
 		// Import old values
 		SharedPreferences sp = context.getSharedPreferences(PREFS_FILE,
 				Context.MODE_PRIVATE);

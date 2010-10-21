@@ -28,7 +28,7 @@ public class PreferenceObfuscator {
 	private static final String TAG = "PreferenceObfuscator";
 
 	private final SharedPreferences mPreferences;
-	private final Obfuscator mObfuscator;
+	private final AESObfuscator mObfuscator;
 	private SharedPreferences.Editor mEditor;
 
 	/**
@@ -39,7 +39,7 @@ public class PreferenceObfuscator {
 	 * @param o
 	 *            The Obfuscator to use when reading or writing data.
 	 */
-	public PreferenceObfuscator(SharedPreferences sp, Obfuscator o) {
+	public PreferenceObfuscator(SharedPreferences sp, AESObfuscator o) {
 		mPreferences = sp;
 		mObfuscator = o;
 		mEditor = null;
