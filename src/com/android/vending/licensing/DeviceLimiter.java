@@ -20,12 +20,12 @@ package com.android.vending.licensing;
  * Allows the developer to limit the number of devices using a single license.
  * <p>
  * The LICENSED response from the server contains a user identifier unique to
- * the &lt;application, user&gt; pair. The developer can send this identifier
- * to their own server along with some device identifier (a random number
- * generated and stored once per application installation,
+ * the &lt;application, user&gt; pair. The developer can send this identifier to
+ * their own server along with some device identifier (a random number generated
+ * and stored once per application installation,
  * {@link android.telephony.TelephonyManager#getDeviceId getDeviceId},
- * {@link android.provider.Settings.Secure#ANDROID_ID ANDROID_ID}, etc).
- * The more sources used to identify the device, the harder it will be for an
+ * {@link android.provider.Settings.Secure#ANDROID_ID ANDROID_ID}, etc). The
+ * more sources used to identify the device, the harder it will be for an
  * attacker to spoof.
  * <p>
  * The server can look at the &lt;application, user, device id&gt; tuple and
@@ -37,11 +37,13 @@ package com.android.vending.licensing;
  */
 public interface DeviceLimiter {
 
-    /**
-     * Checks if this device is allowed to use the given user's license.
-     *
-     * @param userId the user whose license the server responded with
-     * @return LICENSED if the device is allowed, NOT_LICENSED if not, RETRY if an error occurs
-     */
-    Policy.LicenseResponse isDeviceAllowed(String userId);
+	/**
+	 * Checks if this device is allowed to use the given user's license.
+	 * 
+	 * @param userId
+	 *            the user whose license the server responded with
+	 * @return LICENSED if the device is allowed, NOT_LICENSED if not, RETRY if
+	 *         an error occurs
+	 */
+	Policy.LicenseResponse isDeviceAllowed(String userId);
 }
