@@ -182,9 +182,8 @@ final class LicenseValidator {
 			handleResponse(LicenseResponse.RETRY, data);
 			break;
 		case ERROR_OVER_QUOTA:
-			Log
-					.w(TAG,
-							"Licensing server is refusing to talk to this device, over quota.");
+			Log.w(TAG,
+					"Licensing server is refusing to talk to this device, over quota.");
 			handleResponse(LicenseResponse.RETRY, data);
 			break;
 		case ERROR_INVALID_PACKAGE_NAME:

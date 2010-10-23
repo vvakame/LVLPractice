@@ -59,8 +59,8 @@ final public class AESObfuscator {
 		try {
 			SecretKeyFactory factory = SecretKeyFactory
 					.getInstance(KEYGEN_ALGORITHM);
-			KeySpec keySpec = new PBEKeySpec((applicationId + deviceId)
-					.toCharArray(), salt, 1024, 256);
+			KeySpec keySpec = new PBEKeySpec(
+					(applicationId + deviceId).toCharArray(), salt, 1024, 256);
 			SecretKey tmp = factory.generateSecret(keySpec);
 			SecretKey secret = new SecretKeySpec(tmp.getEncoded(), "AES");
 			mEncryptor = Cipher.getInstance(CIPHER_ALGORITHM);

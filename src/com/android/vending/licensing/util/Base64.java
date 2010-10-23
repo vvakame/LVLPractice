@@ -184,7 +184,7 @@ public class Base64 {
 	private Base64() {
 	}
 
-	/*  ******** E N C O D I N G M E T H O D S ******** */
+	/* ******** E N C O D I N G M E T H O D S ******** */
 
 	/**
 	 * Encodes up to three bytes of the array <var>source</var> and writes the
@@ -255,8 +255,8 @@ public class Base64 {
 	} // end encode3to4
 
 	/**
-	 * Encodes a byte array into Base64 notation. Equivalent to calling {@code
-	 * encodeBytes(source, 0, source.length)}
+	 * Encodes a byte array into Base64 notation. Equivalent to calling
+	 * {@code encodeBytes(source, 0, source.length)}
 	 * 
 	 * @param source
 	 *            The data to convert
@@ -375,7 +375,7 @@ public class Base64 {
 		return outBuff;
 	}
 
-	/*  ******** D E C O D I N G M E T H O D S ******** */
+	/* ******** D E C O D I N G M E T H O D S ******** */
 
 	/**
 	 * Decodes four bytes from array <var>source</var> and writes the resulting

@@ -159,8 +159,7 @@ final public class LicenseChecker implements ServiceConnection {
 						handleServiceConnectionError(validator);
 					}
 				} catch (SecurityException e) {
-					callback
-							.applicationError(ApplicationErrorCode.MISSING_PERMISSION);
+					callback.applicationError(ApplicationErrorCode.MISSING_PERMISSION);
 				}
 			} else {
 				mPendingChecks.offer(validator);
@@ -173,8 +172,9 @@ final public class LicenseChecker implements ServiceConnection {
 		LicenseValidator validator;
 		while ((validator = mPendingChecks.poll()) != null) {
 			try {
-				Log.i(TAG, "Calling checkLicense on service for "
-						+ validator.getPackageName());
+				Log.i(TAG,
+						"Calling checkLicense on service for "
+								+ validator.getPackageName());
 				mService.checkLicense(validator.getNonce(), validator
 						.getPackageName(), new ResultListener(validator));
 				mChecksInProgress.add(validator);
@@ -274,9 +274,8 @@ final public class LicenseChecker implements ServiceConnection {
 			} catch (IllegalArgumentException e) {
 				// Somehow we've already been unbound. This is a non-fatal
 				// error.
-				Log
-						.e(TAG,
-								"Unable to unbind from licensing service (already unbound)");
+				Log.e(TAG,
+						"Unable to unbind from licensing service (already unbound)");
 			}
 			mService = null;
 		}

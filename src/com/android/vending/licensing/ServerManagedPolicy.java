@@ -198,9 +198,8 @@ final public class ServerManagedPolicy {
 			lValidityTimestamp = Long.parseLong(validityTimestamp);
 		} catch (NumberFormatException e) {
 			// No response or not parsable, expire in one minute.
-			Log
-					.w(TAG,
-							"License validity timestamp (VT) missing, caching for a minute");
+			Log.w(TAG,
+					"License validity timestamp (VT) missing, caching for a minute");
 			lValidityTimestamp = System.currentTimeMillis() + MILLIS_PER_MINUTE;
 			validityTimestamp = Long.toString(lValidityTimestamp);
 		}
@@ -227,9 +226,8 @@ final public class ServerManagedPolicy {
 			lRetryUntil = Long.parseLong(retryUntil);
 		} catch (NumberFormatException e) {
 			// No response or not parsable, expire immediately
-			Log
-					.w(TAG,
-							"License retry timestamp (GT) missing, grace period disabled");
+			Log.w(TAG,
+					"License retry timestamp (GT) missing, grace period disabled");
 			retryUntil = "0";
 			lRetryUntil = 0l;
 		}
@@ -309,9 +307,8 @@ final public class ServerManagedPolicy {
 				results.put(item.getName(), item.getValue());
 			}
 		} catch (URISyntaxException e) {
-			Log
-					.w(TAG,
-							"Invalid syntax error while decoding extras data from server.");
+			Log.w(TAG,
+					"Invalid syntax error while decoding extras data from server.");
 		}
 		return results;
 	}

@@ -101,24 +101,27 @@ public class MainActivity extends Activity {
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		// We have only one dialog.
-		return new AlertDialog.Builder(this).setTitle(
-				R.string.unlicensed_dialog_title).setMessage(
-				R.string.unlicensed_dialog_body).setPositiveButton(
-				R.string.buy_button, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						Intent marketIntent = new Intent(
-								Intent.ACTION_VIEW,
-								Uri
-										.parse("http://market.android.com/details?id="
+		return new AlertDialog.Builder(this)
+				.setTitle(R.string.unlicensed_dialog_title)
+				.setMessage(R.string.unlicensed_dialog_body)
+				.setPositiveButton(R.string.buy_button,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int which) {
+								Intent marketIntent = new Intent(
+										Intent.ACTION_VIEW,
+										Uri.parse("http://market.android.com/details?id="
 												+ getPackageName()));
-						startActivity(marketIntent);
-					}
-				}).setNegativeButton(R.string.quit_button,
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						finish();
-					}
-				}).create();
+								startActivity(marketIntent);
+							}
+						})
+				.setNegativeButton(R.string.quit_button,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int which) {
+								finish();
+							}
+						}).create();
 	}
 
 	private void doCheck() {
